@@ -1,0 +1,4 @@
+{
+    "APP_NAME": "MyApp",
+    "DEFAULT_WEBHOOK_URL": "https://example.com/webhook"
+}
