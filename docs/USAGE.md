@@ -1,10 +1,10 @@
 # Reading and Managing Transcripts
 
-TranscripTonic automatically captures transcripts during your meetings. Here is how you can access and manage them.
+Wingerx Meeting Transcript automatically captures transcripts during your meetings. Here is how you can access and manage them.
 
 ## Viewing Transcripts
 1.  **Extension Popup:**
-    - Click the TranscripTonic icon in your Chrome toolbar.
+    - Click the Wingerx Meeting Transcript icon in your Chrome toolbar.
     - Click on **"Last 10 meetings"**. This will open the `meetings.html` page.
 
 2.  **Meetings Page:**
@@ -18,7 +18,7 @@ TranscripTonic automatically captures transcripts during your meetings. Here is 
 ## Auto-Recovery
 - If a meeting ends unexpectedly or you don't see a transcript, you can try to recover it.
 - Go to the **Meetings Page** and click the **"Recover last meeting"** button at the bottom.
-- TranscripTonic stores temporary data and will attempt to reconstruct the last meeting's transcript.
+- Wingerx Meeting Transcript stores temporary data and will attempt to reconstruct the last meeting's transcript.
 
 ## Modes of Operation
 - **Auto mode:** Automatically starts recording as soon as captions are enabled in the meeting.

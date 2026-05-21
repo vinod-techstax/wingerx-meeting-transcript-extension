@@ -1,8 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "TranscripTonic",
+  "name": "Wingerx Meeting Transcript",
   "version": "3.3.4",
   "description": "Simple Google Meet transcripts. Private and open source.",
+  "web_accessible_resources": [
+    {
+      "resources": ["config.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"

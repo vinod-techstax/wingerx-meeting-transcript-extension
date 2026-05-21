@@ -1,6 +1,6 @@
 # Installation Guide
 
-To install TranscripTonic in Developer Mode from the source code, follow these steps:
+To install Wingerx Meeting Transcript in Developer Mode from the source code, follow these steps:
 
 1.  **Open Chrome Extensions Page:**
     - Open Google Chrome.
@@ -16,8 +16,8 @@ To install TranscripTonic in Developer Mode from the source code, follow these s
     - Click **Select Folder** (or **Open**).
 
 4.  **Verify Installation:**
-    - TranscripTonic should now appear in your list of extensions.
-    - Look for the TranscripTonic icon in the Chrome toolbar (you may need to click the puzzle piece icon to see it and pin it).
+    - Wingerx Meeting Transcript should now appear in your list of extensions.
+    - Look for the Wingerx Meeting Transcript icon in the Chrome toolbar (you may need to click the puzzle piece icon to see it and pin it).
 
 5.  **Permissions:**
     - When you first use the extension on a supported platform (Google Meet, Teams, or Zoom), it may ask for additional permissions. Click "Allow" or "Review" as prompted by the extension's popup or meetings page.
@@ -25,4 +25,4 @@ To install TranscripTonic in Developer Mode from the source code, follow these s
 ## Updating the Extension
 If you make changes to the source code:
 - Go back to `chrome://extensions/`.
-- Find TranscripTonic and click the **Reload** icon (circular arrow).
+- Find Wingerx Meeting Transcript and click the **Reload** icon (circular arrow).

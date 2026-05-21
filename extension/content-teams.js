@@ -25,10 +25,10 @@ function teams() {
   /** @type {ExtensionStatusJSON} */
   const extensionStatusJSON_bug = {
     "status": 400,
-    "message": `<strong>TranscripTonic encountered a new error</strong>`
+    "message": `<strong>Wingerx Meeting Transcript encountered a new error</strong>`
   }
 
-  const reportErrorMessage = "There is a bug in TranscripTonic"
+  const reportErrorMessage = "There is a bug in Wingerx Meeting Transcript"
   /** @type {MutationObserverInit} */
   const mutationConfig = { childList: true, attributes: true, subtree: true, characterData: true }
 
@@ -131,7 +131,7 @@ function teams() {
         const resultSync = /** @type {ResultSync} */ (resultSyncUntyped)
         if (resultSync.operationMode === "manual") {
           console.log("Manual mode selected, leaving transcript off")
-          showNotification({ status: 400, message: "<strong>TranscripTonic is not running</strong> <br /> Turn on captions, if needed (More > Language > Captions)" })
+          showNotification({ status: 400, message: "<strong>Wingerx Meeting Transcript is not running</strong> <br /> Turn on captions, if needed (More > Language > Captions)" })
         }
         else {
           // Allow keyboard event listener to be ready
@@ -361,11 +361,11 @@ function teams() {
     transition: background-color 0.3s ease-in
   `
     /** @type {HTMLDivElement | null}*/
-    let activityStatus = document.querySelector(`#transcriptonic-status`)
+    let activityStatus = document.querySelector(`#wingerx-meeting-transcript-status`)
     if (!activityStatus) {
       let html = document.querySelector("html")
       activityStatus = document.createElement("div")
-      activityStatus.setAttribute("id", "transcriptonic-status")
+      activityStatus.setAttribute("id", "wingerx-meeting-transcript-status")
       activityStatus.style.cssText = `background-color: #2A9ACA; ${statusActivityCSS}`
       html?.appendChild(activityStatus)
     }
@@ -540,7 +540,7 @@ function teams() {
   function checkExtensionStatus() {
     return new Promise((resolve, reject) => {
       // Set default value as 200
-      extensionStatusJSON = { status: 200, message: "<b>TranscripTonic is ready, enabling captions...</b> <br /> Please enable manually if not successful (More > Captions)" }
+      extensionStatusJSON = { status: 200, message: "<b>Wingerx Meeting Transcript is ready, enabling captions...</b> <br /> Please enable manually if not successful (More > Captions)" }
 
       // https://stackoverflow.com/a/42518434
       fetch(
@@ -554,7 +554,7 @@ function teams() {
           // Disable extension if version is below the min version
           if (!meetsMinVersion(chrome.runtime.getManifest().version, minVersion)) {
             extensionStatusJSON.status = 400
-            extensionStatusJSON.message = `<strong>TranscripTonic is not running</strong> <br />`
+            extensionStatusJSON.message = `<strong>Wingerx Meeting Transcript is not running</strong> <br />`
           }
           else {
             // Update status based on response

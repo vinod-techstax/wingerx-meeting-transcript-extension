@@ -28,10 +28,10 @@ function zoom() {
   /** @type {ExtensionStatusJSON} */
   const extensionStatusJSON_bug = {
     "status": 400,
-    "message": `<strong>TranscripTonic encountered a new error</strong> <br /> `
+    "message": `<strong>Wingerx Meeting Transcript encountered a new error</strong> <br /> `
   }
 
-  const reportErrorMessage = "There is a bug in TranscripTonic"
+  const reportErrorMessage = "There is a bug in Wingerx Meeting Transcript"
   /** @type {MutationObserverInit} */
   const mutationConfig = { childList: true, attributes: true, subtree: true, characterData: true }
 
@@ -459,11 +459,11 @@ function zoom() {
 
       if (iframeDOM) {
         /** @type {HTMLDivElement | null}*/
-        let activityStatus = iframeDOM.querySelector(`#transcriptonic-status`)
+        let activityStatus = iframeDOM.querySelector(`#wingerx-meeting-transcript-status`)
         if (!activityStatus) {
           let html = iframeDOM.querySelector("html")
           activityStatus = iframeDOM.createElement("div")
-          activityStatus.setAttribute("id", "transcriptonic-status")
+          activityStatus.setAttribute("id", "wingerx-meeting-transcript-status")
           activityStatus.style.cssText = `background-color: #2A9ACA; ${statusActivityCSS}`
           html?.appendChild(activityStatus)
         }
@@ -627,7 +627,7 @@ function zoom() {
   function checkExtensionStatus() {
     return new Promise((resolve, reject) => {
       // Set default value as 200
-      extensionStatusJSON = { status: 200, message: "TranscripTonic is ready <br /> <b>Please switch on Zoom captions to begin (More > Captions)</b>" }
+      extensionStatusJSON = { status: 200, message: "Wingerx Meeting Transcript is ready <br /> <b>Please switch on Zoom captions to begin (More > Captions)</b>" }
 
       // https://stackoverflow.com/a/42518434
       fetch(
@@ -641,7 +641,7 @@ function zoom() {
           // Disable extension if version is below the min version
           if (!meetsMinVersion(chrome.runtime.getManifest().version, minVersion)) {
             extensionStatusJSON.status = 400
-            extensionStatusJSON.message = `<strong>TranscripTonic is not running</strong> <br /> `
+            extensionStatusJSON.message = `<strong>Wingerx Meeting Transcript is not running</strong> <br /> `
           }
           else {
             // Update status based on response

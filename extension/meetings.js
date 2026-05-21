@@ -68,16 +68,27 @@ document.addEventListener("DOMContentLoaded", function () {
         // Initially disable the save button
         saveButton.disabled = true
 
-        // Load saved webhook URL, auto-post setting, and webhook body type
-        chrome.storage.sync.get(["webhookUrl", "autoPostWebhookAfterMeeting", "autoDownloadFileAfterMeeting", "webhookBodyType"], function (resultSyncUntyped) {
-            const resultSync = /** @type {ResultSync} */ (resultSyncUntyped)
+    // Load saved webhook URL, auto-post setting, and webhook body type
+    chrome.storage.sync.get(["webhookUrl", "autoPostWebhookAfterMeeting", "autoDownloadFileAfterMeeting", "webhookBodyType"], function (resultSyncUntyped) {
+        const resultSync = /** @type {ResultSync} */ (resultSyncUntyped)
 
-            if (resultSync.webhookUrl) {
-                webhookUrlInput.value = resultSync.webhookUrl
-                saveButton.disabled = !webhookUrlInput.checkValidity()
-            }
+        if (resultSync.webhookUrl) {
+            webhookUrlInput.value = resultSync.webhookUrl
+            saveButton.disabled = !webhookUrlInput.checkValidity()
+        } else {
+            // Load default webhook URL from config.json if no URL is saved
+            fetch(chrome.runtime.getURL('config.json'))
+                .then(response => response.json())
+                .then(config => {
+                    if (config.DEFAULT_WEBHOOK_URL) {
+                        webhookUrlInput.value = config.DEFAULT_WEBHOOK_URL
+                        saveButton.disabled = !webhookUrlInput.checkValidity()
+                    }
+                })
+                .catch(error => console.error("Error loading config.json:", error))
+        }
 
-            // Set checkbox state
+        // Set checkbox state
             autoPostCheckbox.checked = resultSync.autoPostWebhookAfterMeeting
             if (autoDownloadCheckbox instanceof HTMLInputElement) {
                 autoDownloadCheckbox.checked = resultSync.autoDownloadFileAfterMeeting !== false

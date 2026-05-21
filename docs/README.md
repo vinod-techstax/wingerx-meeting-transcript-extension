@@ -1,6 +1,6 @@
-# TranscripTonic Documentation
+# Wingerx Meeting Transcript Documentation
 
-Welcome to the TranscripTonic documentation. Here you will find guides on how to install, use, and integrate the extension.
+Welcome to the Wingerx Meeting Transcript documentation. Here you will find guides on how to install, use, and integrate the extension.
 
 ## Guides
 - [**Installation Guide**](INSTALLATION.md): How to install the extension in Developer Mode.

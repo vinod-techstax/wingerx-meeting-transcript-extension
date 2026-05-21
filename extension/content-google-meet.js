@@ -7,10 +7,10 @@
 /** @type {ExtensionStatusJSON} */
 const extensionStatusJSON_bug = {
   "status": 400,
-  "message": `<strong>TranscripTonic encountered a new error</strong>`
+  "message": `<strong>Wingerx Meeting Transcript encountered a new error</strong>`
 }
 
-const reportErrorMessage = "There is a bug in TranscripTonic."
+const reportErrorMessage = "There is a bug in Wingerx Meeting Transcript."
 /** @type {MutationObserverInit} */
 const mutationConfig = { childList: true, attributes: true, subtree: true, characterData: true }
 
@@ -194,7 +194,7 @@ function meetingRoutines(uiType) {
           chrome.storage.sync.get(["operationMode"], function (resultSyncUntyped) {
             const resultSync = /** @type {ResultSync} */ (resultSyncUntyped)
             if (resultSync.operationMode === "manual") {
-              showNotification({ status: 400, message: "<strong>TranscripTonic is not running</strong> <br /> Turn on captions using the CC icon, if needed" })
+              showNotification({ status: 400, message: "<strong>Wingerx Meeting Transcript is not running</strong> <br /> Turn on captions using the CC icon, if needed" })
             }
             else {
               showNotification(extensionStatusJSON)
@@ -514,11 +514,11 @@ function pulseStatus() {
   `
 
   /** @type {HTMLDivElement | null}*/
-  let activityStatus = document.querySelector(`#transcriptonic-status`)
+  let activityStatus = document.querySelector(`#wingerx-meeting-transcript-status`)
   if (!activityStatus) {
     let html = document.querySelector("html")
     activityStatus = document.createElement("div")
-    activityStatus.setAttribute("id", "transcriptonic-status")
+    activityStatus.setAttribute("id", "wingerx-meeting-transcript-status")
     activityStatus.style.cssText = `background-color: #2A9ACA; ${statusActivityCSS}`
     html?.appendChild(activityStatus)
   }
@@ -539,7 +539,7 @@ function updateMeetingTitle() {
   waitForElement(".u6vdEc").then((element) => {
     const meetingTitleElement = /** @type {HTMLDivElement} */ (element)
     meetingTitleElement?.setAttribute("contenteditable", "true")
-    meetingTitleElement.title = "Edit meeting title for TranscripTonic"
+    meetingTitleElement.title = "Edit meeting title for Wingerx Meeting Transcript"
     meetingTitleElement.style.cssText = `text-decoration: underline white; text-underline-offset: 4px;`
 
     meetingTitleElement?.addEventListener("input", handleMeetingTitleElementChange)
@@ -727,7 +727,7 @@ function meetsMinVersion(oldVer, newVer) {
 function checkExtensionStatus() {
   return new Promise((resolve, reject) => {
     // Set default value as 200
-    extensionStatusJSON = { status: 200, message: "<strong>TranscripTonic is running</strong> <br /> Do not turn off captions" }
+    extensionStatusJSON = { status: 200, message: "<strong>Wingerx Meeting Transcript is running</strong> <br /> Do not turn off captions" }
 
     // https://stackoverflow.com/a/42518434
     fetch(
@@ -741,7 +741,7 @@ function checkExtensionStatus() {
         // Disable extension if version is below the min version
         if (!meetsMinVersion(chrome.runtime.getManifest().version, minVersion)) {
           extensionStatusJSON.status = 400
-          extensionStatusJSON.message = `<strong>TranscripTonic is not running</strong> <br /> Please update to v${minVersion}`
+          extensionStatusJSON.message = `<strong>Wingerx Meeting Transcript is not running</strong> <br /> Please update to v${minVersion}`
         }
         else {
           // Update status based on response
