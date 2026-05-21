@@ -1,38 +1,6 @@
 # Wingerx Meeting Transcript
 Simple Google Meet transcripts. Private and open source. 
-> Teams and Zoom transcripts in beta. 
 
-![marquee-large](/assets/marquee-large.png)
-
-Extension status: 🟢 OPERATIONAL (v3.3.4)
-
-<br />
-
-### 📖 [View Documentation](./docs/README.md)
-Detailed guides for Installation, Usage, and External Integration.
-
-<br />
-<br />
-
-
-
-# Demo
-View video on [YouTube](https://www.youtube.com/watch?v=ARL6HbkakX4)
-
-![demo](/assets/demo.gif)
-
-
-<br />
-<br />
-
-
-# Installation
-<a href="https://chromewebstore.google.com/detail/ciepnfnceimjehngolkijpnbappkkiag" target="_blank">
-    <img src="https://developer.chrome.com/static/docs/webstore/branding/image/iNEddTyWiMfLSwFD6qGq.png" />
-</a>
-
-<br />
-<br />
 
 # How to use Wingerx Meeting Transcript
 ![screenshot-2](/assets/screenshot-2.png)
